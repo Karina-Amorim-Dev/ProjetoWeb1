@@ -1,10 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
+using ProjetoWeb1.Interfaces;
 using ProjetoWeb1.Models;
 
 namespace ProjetoWeb1.Repositorios
 {
     //Classe que implementa a interface IUsuarioRepositorio(contrato de métodos)
-    public class UsuarioRepositorio(IConfiguration config)
+    public class UsuarioRepositorio(IConfiguration config) : IUsuarioRepositoriocs // herança (: indica a herança)
     {
         // variavel privada e somente leitura para armazenar a string de conexão
         private readonly string _connectionString = config.GetConnectionString("Conexão");

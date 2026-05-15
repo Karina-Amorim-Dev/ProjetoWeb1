@@ -1,4 +1,22 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using ProjetoWeb1.Interfaces;
+using ProjetoWeb1.Repositorios;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Configurar os serviço de autenticação do sistema
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+   {
+       options.LoginPath = "/Usuario/Logar";
+       options.AccessDeniedPath = "/Usuario/AcessoNegado";
+   });
+
+builder.Services.AddScoped<IUsuarioRepositoriocs, UsuarioRepositorio>();
+
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
