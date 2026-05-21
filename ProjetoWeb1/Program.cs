@@ -13,7 +13,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
        options.AccessDeniedPath = "/Usuario/AcessoNegado";
    });
 
-builder.Services.AddScoped<IUsuarioRepositoriocs, UsuarioRepositorio>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 
 

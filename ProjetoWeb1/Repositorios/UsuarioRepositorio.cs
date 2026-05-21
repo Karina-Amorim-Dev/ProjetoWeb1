@@ -5,7 +5,7 @@ using ProjetoWeb1.Models;
 namespace ProjetoWeb1.Repositorios
 {
     //Classe que implementa a interface IUsuarioRepositorio(contrato de métodos)
-    public class UsuarioRepositorio(IConfiguration config) : IUsuarioRepositoriocs // herança (: indica a herança)
+    public class UsuarioRepositorio(IConfiguration config) : IUsuarioRepositorio // herança (: indica a herança)
     {
         // variavel privada e somente leitura para armazenar a string de conexão
         private readonly string _connectionString = config.GetConnectionString("Conexão");
@@ -36,8 +36,9 @@ namespace ProjetoWeb1.Repositorios
                     Email = reader["Email"].ToString()!,
                     Nivel = reader["Nivel"].ToString()!
                 };
-                return null;
+                
             }
+            return null;
 
         }
     }
