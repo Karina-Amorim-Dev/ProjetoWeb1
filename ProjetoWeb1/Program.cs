@@ -32,7 +32,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// MUITO IMPORTANTE
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

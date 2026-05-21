@@ -8,7 +8,7 @@ namespace ProjetoWeb1.Repositorios
     public class UsuarioRepositorio(IConfiguration config) : IUsuarioRepositorio // herança (: indica a herança)
     {
         // variavel privada e somente leitura para armazenar a string de conexão
-        private readonly string _connectionString = config.GetConnectionString("Conexão");
+        private readonly string _connectionString = config.GetConnectionString("Conexao");
 
         //método que valida se o usuario existe no banco com base em email e senha
         public LoginViewModel Validar(string email, string senha)
